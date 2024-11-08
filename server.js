@@ -94,8 +94,8 @@ app.get('/latest-reading', (req, res) => {
 });
 
 // Twilio configuration
-const accountSid = 'AC6792f62098668b54b54eac48dc3d5ca0'; // Replace with your Twilio Account SID
-const authToken = '778b8804b7fa1354042f55e616a3d3fc'; // Replace with your Twilio Auth Token
+const accountSid = ''; // Replace with your Twilio Account SID
+const authToken = ''; // Replace with your Twilio Auth Token
 const client = twilio(accountSid, authToken);
 
 // Endpoint to send the bill via SMS
@@ -107,7 +107,7 @@ app.post('/send-bill', (req, res) => {
 
     client.messages.create({
         body: message,
-        from: '+18644818562', // Your Twilio number
+        from: '', // Your Twilio number
         to: phoneNumber // The predefined phone number
     })
     .then(message => {
